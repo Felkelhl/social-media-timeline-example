@@ -45,7 +45,7 @@ social-media-timeline-example
 │   │   └── index.spec.js       # Testing file for the Redux actions in the index file
 |   ├── components              # Contains all of the static components to display various views
 |   │   └── App.js              # Entry point for the components through the root index.js file
-│   ├── containers              # Contains all of the stateful components to display aggregate the state data
+│   ├── containers              # Contains all of the stateful components
 │   ├── index.js                # Entry point for the React application
 │   └── reducers                # Contains all of the reducers for Redux
 │       └── index.js            # Entry point for the Redux reducers contained within the folder
