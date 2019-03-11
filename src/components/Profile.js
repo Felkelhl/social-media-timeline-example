@@ -52,7 +52,7 @@ const ProfileDescription = styled.p`
 const Profile = () => (
   <ProfileContainer>
     <ImageContainer>
-      <ProfileImage src={BenefitfocusLogo} />
+      <ProfileImage src={BenefitfocusLogo} alt="Benefitfocus Logo" />
     </ImageContainer>
     <ProfileInfo>
       <ProfileName>Benefitfocus</ProfileName>

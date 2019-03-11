@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -60,18 +60,18 @@ const TweetButton = styled.button`
 `;
 
 const AddTweet = ({ dispatch }) => {
+  // Use React Hooks since this is a function expression and not a class
   const [textAreaSelected, setTextAreaSelected] = useState(false);
   const [addTweetDisabled, setAddTweetDisabled] = useState(true);
-
-  let input;
+  const input = useRef(null);
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (!input.value.trim()) {
+    if ( !input.current.value.trim() ) {
       return;
     }
-    dispatch(addTweet(input.value));
-    input.value = '';
+    dispatch(addTweet(input.current.value));
+    input.current.value = '';
     setAddTweetDisabled(true);
   }
 
@@ -80,8 +80,8 @@ const AddTweet = ({ dispatch }) => {
    * Disable the submit button if the text length for the tweet is 0.
    */
   const onChangeTextArea = () => {
-    if( Boolean(input.value.trim().length) === addTweetDisabled ) { 
-      setAddTweetDisabled( !Boolean(input.value.trim().length) ) 
+    if( Boolean(input.current.value.trim().length) === addTweetDisabled ) { 
+      setAddTweetDisabled( !Boolean(input.current.value.trim().length) ) 
     }
   }
 
@@ -90,7 +90,8 @@ const AddTweet = ({ dispatch }) => {
       <TweetForm onSubmit={event => onSubmit(event)}>
         <TweetTextArea 
           placeholder="What's on your mind?"
-          ref={node => input = node} 
+          ref={input} 
+          type="text"
           onChange={onChangeTextArea}
           onFocus={() => setTextAreaSelected(true)}
           onBlur={() => setTextAreaSelected(false)}

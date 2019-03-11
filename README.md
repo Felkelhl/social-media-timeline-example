@@ -51,5 +51,13 @@ social-media-timeline-example
 │       └── index.js            # Entry point for the Redux reducers contained within the folder
 ```
 
+## Testing 
+
+To run the testing suite:
+
+```
+yarn test --watchAll
+```
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

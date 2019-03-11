@@ -52,8 +52,9 @@ describe('tweets reducer', () => {
   })
 
   /** 
-   * This is used to verify that deep searching of the Immutable objects is working properly 
+   * Verify that deep searching of the Immutable objects is working properly 
    * for the testing script through the Immutable.is() function check 
+   * by using different content string for the comparsion
    */
   it('should handle ADD_TWEET Test Spelling', () => {
     expect(Immutable.is(

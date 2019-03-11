@@ -29,7 +29,6 @@ const TweedCard = styled.div`
 const TweetRow = styled.span`
   display: flex;
   width: 100%;
-  -webkit-box-align: center;
   align-items: center;
 `;
 const ProfileInfo = styled.div`
