@@ -9,6 +9,7 @@ const AddTweetContainer = styled.div`
   padding: 10px 12px;
   border: 1px solid #f5f8fa;
   border-radius: 5px;
+  margin: 10px 20px 0;
 `;
 const TweetForm = styled.form`
   display: flex;
